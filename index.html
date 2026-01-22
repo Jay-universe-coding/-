@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>森林工坊 - 手作家具與天然護唇膏</title>
+    <title>HYGGE 工作室 - 北歐手作家具與護唇膏</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,17 +15,22 @@
         }
 
         :root {
-            --primary: #2c3e50;
-            --accent: #d4a574;
-            --light: #f8f6f3;
-            --dark: #1a1a1a;
+            --primary: #3d5a5c;
+            --accent: #d4a373;
+            --light-bg: #f7f7f5;
+            --white: #ffffff;
+            --text: #2c3e50;
+            --light-text: #7a7a7a;
+            --sage: #9caf88;
+            --terracotta: #c97064;
+            --powder: #e8dcc4;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
-            line-height: 1.7;
-            color: var(--dark);
-            background: var(--light);
+            font-family: 'Noto Sans TC', 'Quicksand', sans-serif;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--light-bg);
         }
 
         /* 導航列 */
@@ -30,31 +38,27 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.98);
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
         }
 
         nav {
-            max-width: 1400px;
+            max-width: 1300px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 3rem;
+            padding: 1.8rem 3rem;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.6rem;
             font-weight: 300;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: var(--primary);
-        }
-
-        .logo span {
-            color: var(--accent);
-            font-weight: 400;
+            text-transform: uppercase;
         }
 
         .nav-links {
@@ -64,82 +68,76 @@
         }
 
         .nav-links a {
-            color: var(--primary);
+            color: var(--text);
             text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 300;
-            letter-spacing: 1px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
             transition: color 0.3s;
-            position: relative;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--accent);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        .nav-links a:hover {
+            color: var(--sage);
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23e8dfd0"/><stop offset="100%" style="stop-color:%23c9b79c"/></linearGradient></defs><rect fill="url(%23g)" width="1920" height="1080"/></svg>') center/cover;
+            height: 92vh;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23e8dcc4" width="1920" height="1080"/><circle cx="200" cy="200" r="300" fill="%23f7f7f5" opacity="0.4"/><circle cx="1600" cy="800" r="400" fill="%23d4a373" opacity="0.15"/><circle cx="900" cy="400" r="250" fill="%239caf88" opacity="0.2"/></svg>') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 700px;
         }
 
         .hero-content h1 {
-            font-size: 4.5rem;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 4rem;
             font-weight: 300;
-            letter-spacing: 8px;
+            letter-spacing: 6px;
             margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+            color: var(--primary);
+            text-transform: uppercase;
         }
 
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 300;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             margin-bottom: 3rem;
-            opacity: 0.95;
+            color: var(--light-text);
         }
 
         .cta-button {
             display: inline-block;
-            padding: 1.2rem 3rem;
-            background: transparent;
+            padding: 1rem 3rem;
+            background: var(--sage);
             color: white;
-            border: 1px solid white;
             text-decoration: none;
             letter-spacing: 2px;
-            font-size: 0.9rem;
-            transition: all 0.4s;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            border-radius: 2px;
         }
 
         .cta-button:hover {
-            background: white;
-            color: var(--primary);
+            background: var(--primary);
+            transform: translateY(-2px);
         }
 
         /* Section Styling */
         section {
-            padding: 8rem 3rem;
+            padding: 7rem 3rem;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
@@ -148,177 +146,215 @@
             margin-bottom: 5rem;
         }
 
+        .section-tag {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: var(--sage);
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+
         .section-title {
-            font-size: 3rem;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 2.8rem;
             font-weight: 300;
-            letter-spacing: 4px;
+            letter-spacing: 2px;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .section-subtitle {
             font-size: 1rem;
-            color: #666;
-            letter-spacing: 2px;
-            font-weight: 300;
+            color: var(--light-text);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
         }
 
         /* Products Grid */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 3rem;
-            margin-bottom: 6rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
         }
 
         .product-card {
-            background: white;
+            background: var(--white);
             overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
         }
 
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
         }
 
         .product-image {
             width: 100%;
-            height: 400px;
+            height: 380px;
             position: relative;
             overflow: hidden;
-            background: #f0f0f0;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .product-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(44, 62, 80, 0.1));
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .product-card:hover .product-image::before {
-            opacity: 1;
-        }
-
         .product-image-icon {
-            font-size: 6rem;
-            filter: grayscale(20%);
+            font-size: 5rem;
         }
 
         .product-content {
             padding: 2.5rem;
+            background: var(--white);
         }
 
         .product-category {
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
+            font-size: 0.7rem;
+            letter-spacing: 2.5px;
+            color: var(--sage);
+            margin-bottom: 0.8rem;
             text-transform: uppercase;
         }
 
         .product-title {
-            font-size: 1.8rem;
-            font-weight: 300;
-            letter-spacing: 1px;
+            font-size: 1.6rem;
+            font-weight: 400;
             margin-bottom: 1rem;
             color: var(--primary);
         }
 
         .product-description {
             font-size: 0.95rem;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+            color: var(--light-text);
+            line-height: 1.9;
+            margin-bottom: 2rem;
         }
 
         .product-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(0,0,0,0.05);
         }
 
         .price {
-            font-size: 1.8rem;
-            font-weight: 300;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 400;
             color: var(--primary);
-            letter-spacing: 1px;
         }
 
         .buy-button {
-            padding: 0.8rem 2rem;
-            background: var(--primary);
-            color: white;
-            border: none;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
+            padding: 0.75rem 1.8rem;
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
             cursor: pointer;
             transition: all 0.3s;
+            text-transform: uppercase;
         }
 
         .buy-button:hover {
-            background: var(--accent);
+            background: var(--primary);
+            color: white;
         }
 
         /* About Section */
         .about {
-            background: white;
+            background: var(--white);
         }
 
         .about-content {
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto;
             text-align: center;
         }
 
         .about-text {
-            font-size: 1.15rem;
-            line-height: 2;
-            color: #555;
+            font-size: 1.1rem;
+            line-height: 2.1;
+            color: var(--light-text);
             margin-bottom: 2rem;
             font-weight: 300;
         }
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3.5rem;
             margin-top: 5rem;
         }
 
         .feature {
             text-align: center;
+            padding: 2rem 1rem;
         }
 
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.8;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--powder);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
         }
 
         .feature-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 400;
-            letter-spacing: 1px;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             color: var(--primary);
         }
 
         .feature-text {
             font-size: 0.95rem;
-            color: #666;
+            color: var(--light-text);
+            line-height: 1.9;
+        }
+
+        /* Values Section */
+        .values {
+            background: linear-gradient(135deg, var(--powder) 0%, var(--light-bg) 100%);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: rgba(255,255,255,0.7);
+            border-radius: 3px;
+        }
+
+        .value-number {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--sage);
+            margin-bottom: 1rem;
+        }
+
+        .value-title {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .value-text {
+            font-size: 0.9rem;
+            color: var(--light-text);
             line-height: 1.8;
         }
 
@@ -333,11 +369,15 @@
             color: white;
         }
 
+        .contact .section-tag {
+            color: var(--powder);
+        }
+
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 3rem;
-            margin-top: 3rem;
+            margin-top: 3.5rem;
         }
 
         .contact-item {
@@ -345,53 +385,54 @@
         }
 
         .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
         }
 
         .contact-label {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-            opacity: 0.7;
+            margin-bottom: 0.8rem;
+            opacity: 0.8;
             text-transform: uppercase;
         }
 
         .contact-info {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 300;
-            letter-spacing: 1px;
         }
 
         /* Footer */
         footer {
-            background: #1a1a1a;
+            background: #2c3e50;
             color: #999;
             text-align: center;
-            padding: 3rem;
-            font-size: 0.9rem;
+            padding: 2.5rem;
+            font-size: 0.85rem;
             letter-spacing: 1px;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             nav {
-                padding: 1rem 1.5rem;
+                padding: 1.2rem 1.5rem;
             }
 
             .nav-links {
-                gap: 1.5rem;
-                font-size: 0.85rem;
+                gap: 1.2rem;
+                font-size: 0.8rem;
             }
 
             .hero-content h1 {
                 font-size: 2.5rem;
-                letter-spacing: 4px;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
+                letter-spacing: 3px;
             }
 
             section {
@@ -404,15 +445,9 @@
 
             .products-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .product-image {
-                height: 300px;
             }
         }
 
-        /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
         }
@@ -421,126 +456,128 @@
 <body>
     <header>
         <nav>
-            <div class="logo">森林<span>工坊</span></div>
+            <div class="logo">HYGGE</div>
             <ul class="nav-links">
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#furniture">FURNITURE</a></li>
-                <li><a href="#lipbalm">LIP CARE</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#furniture">Furniture</a></li>
+                <li><a href="#lipbalm">Lip Care</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>FOREST ATELIER</h1>
-            <p>手作家具 · 天然護唇</p>
-            <a href="#furniture" class="cta-button">EXPLORE</a>
+            <h1>HYGGE</h1>
+            <p>北歐簡約生活美學 · 手作家具與天然護唇</p>
+            <a href="#furniture" class="cta-button">探索商品</a>
         </div>
     </section>
 
     <section id="furniture">
         <div class="container">
             <div class="section-header">
+                <div class="section-tag">Handcrafted Collection</div>
                 <h2 class="section-title">手工家具系列</h2>
-                <p class="section-subtitle">HANDCRAFTED FURNITURE COLLECTION</p>
+                <p class="section-subtitle">每件作品都以永續木材手工製作，承襲北歐極簡設計理念，為您的生活空間帶來溫暖與寧靜</p>
             </div>
             
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #e8dfd0 0%, #d4c5a9 100%);">
+                    <div class="product-image" style="background: linear-gradient(135deg, #f5f1eb 0%, #e8dcc4 100%);">
                         <div class="product-image-icon">🪑</div>
                     </div>
                     <div class="product-content">
                         <div class="product-category">Dining Chair</div>
-                        <h3 class="product-title">北歐原木餐椅</h3>
-                        <p class="product-description">精選胡桃木與橡木製成，採用傳統榫卯工藝，每一處細節都經過手工打磨，呈現木材最原始的溫潤質感。</p>
+                        <h3 class="product-title">白橡木溫莎椅</h3>
+                        <p class="product-description">經典溫莎椅設計，採用北歐白橡木製成，流線型椅背與紡錘形椅腿展現簡約優雅。</p>
                         <div class="product-footer">
-                            <div class="price">NT$ 4,800</div>
-                            <button class="buy-button" onclick="alert('感謝您的青睞，請透過聯絡方式洽詢訂製細節')">立即訂製</button>
+                            <div class="price">NT$ 4,200</div>
+                            <button class="buy-button" onclick="alert('感謝您的青睞，請透過聯絡方式洽詢訂製')">Inquiry</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #d4c5a9 0%, #c9b79c 100%);">
+                    <div class="product-image" style="background: linear-gradient(135deg, #e8dcc4 0%, #d9cdb8 100%);">
                         <div class="product-image-icon">🛋️</div>
                     </div>
                     <div class="product-content">
                         <div class="product-category">Coffee Table</div>
-                        <h3 class="product-title">極簡主義茶几</h3>
-                        <p class="product-description">採用整塊實木切割，保留自然邊緣與年輪紋理，搭配霧面啞光處理，展現當代東方美學的寧靜氛圍。</p>
+                        <h3 class="product-title">極簡圓形茶几</h3>
+                        <p class="product-description">圓潤的桌面搭配纖細錐形桌腿，橡木原色與簡約線條完美詮釋北歐風格。</p>
                         <div class="product-footer">
-                            <div class="price">NT$ 6,900</div>
-                            <button class="buy-button" onclick="alert('感謝您的青睞，請透過聯絡方式洽詢訂製細節')">立即訂製</button>
+                            <div class="price">NT$ 6,500</div>
+                            <button class="buy-button" onclick="alert('感謝您的青睞，請透過聯絡方式洽詢訂製')">Inquiry</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #c9b79c 0%, #b8a68a 100%);">
+                    <div class="product-image" style="background: linear-gradient(135deg, #d9cdb8 0%, #cbbfaa 100%);">
                         <div class="product-image-icon">📚</div>
                     </div>
                     <div class="product-content">
                         <div class="product-category">Bookshelf</div>
-                        <h3 class="product-title">工業風鐵木書架</h3>
-                        <p class="product-description">結合黑鐵框架與實木層板，兼具現代工業感與溫暖木質調性，大容量設計滿足收納需求。</p>
+                        <h3 class="product-title">階梯式展示架</h3>
+                        <p class="product-description">不對稱階梯設計，輕巧視覺感，適合展示書籍、植栽或收藏品。</p>
                         <div class="product-footer">
-                            <div class="price">NT$ 8,500</div>
-                            <button class="buy-button" onclick="alert('感謝您的青睞，請透過聯絡方式洽詢訂製細節')">立即訂製</button>
+                            <div class="price">NT$ 5,800</div>
+                            <button class="buy-button" onclick="alert('感謝您的青睞，請透過聯絡方式洽詢訂製')">Inquiry</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="section-header" id="lipbalm">
+                <div class="section-tag">Natural Lip Care</div>
                 <h2 class="section-title">天然護唇系列</h2>
-                <p class="section-subtitle">NATURAL LIP CARE COLLECTION</p>
+                <p class="section-subtitle">使用有機認證原料，不含化學香料與防腐劑，以最純粹的方式呵護您的雙唇</p>
             </div>
             
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #fde6e9 0%, #f8c7cc 100%);">
-                        <div class="product-image-icon">🌹</div>
+                    <div class="product-image" style="background: linear-gradient(135deg, #faf3f0 0%, #f5e6e0 100%);">
+                        <div class="product-image-icon">🌸</div>
                     </div>
                     <div class="product-content">
                         <div class="product-category">Rose</div>
-                        <h3 class="product-title">大馬士革玫瑰護唇膏</h3>
-                        <p class="product-description">添加保加利亞大馬士革玫瑰精油，富含維生素E與乳木果油，深層滋潤修護，賦予雙唇柔嫩光澤。</p>
+                        <h3 class="product-title">有機玫瑰護唇膏</h3>
+                        <p class="product-description">萃取保加利亞有機玫瑰精油，搭配乳木果油與維生素E，溫柔滋潤乾燥雙唇。</p>
                         <div class="product-footer">
-                            <div class="price">NT$ 280</div>
-                            <button class="buy-button" onclick="alert('感謝您的青睞，請透過聯絡方式洽詢訂購詳情')">加入購物</button>
+                            <div class="price">NT$ 260</div>
+                            <button class="buy-button" onclick="alert('感謝您的青睞，請透過聯絡方式洽詢訂購')">Add Cart</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #e0f4f1 0%, #b8dfd8 100%);">
+                    <div class="product-image" style="background: linear-gradient(135deg, #f0f5f0 0%, #e0ebe0 100%);">
                         <div class="product-image-icon">🌿</div>
                     </div>
                     <div class="product-content">
                         <div class="product-category">Mint</div>
-                        <h3 class="product-title">野生薄荷清新護唇膏</h3>
-                        <p class="product-description">萃取野生薄荷精華，結合荷荷巴油與蜂蠟，清涼舒緩，適合炎熱氣候使用，帶來清新舒適感受。</p>
+                        <h3 class="product-title">北歐薄荷護唇膏</h3>
+                        <p class="product-description">選用冰島野生薄荷，清新涼爽，添加荷荷巴油深層保濕，適合四季使用。</p>
                         <div class="product-footer">
-                            <div class="price">NT$ 280</div>
-                            <button class="buy-button" onclick="alert('感謝您的青睞，請透過聯絡方式洽詢訂購詳情')">加入購物</button>
+                            <div class="price">NT$ 260</div>
+                            <button class="buy-button" onclick="alert('感謝您的青睞，請透過聯絡方式洽詢訂購')">Add Cart</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #fff4e6 0%, #ffe0b3 100%);">
+                    <div class="product-image" style="background: linear-gradient(135deg, #fdf8f0 0%, #f9efd9 100%);">
                         <div class="product-image-icon">🍯</div>
                     </div>
                     <div class="product-content">
                         <div class="product-category">Honey</div>
-                        <h3 class="product-title">龍眼蜂蜜修護護唇膏</h3>
-                        <p class="product-description">選用台灣在地龍眼蜂蜜，天然抗菌修護，搭配椰子油與維生素B5，深層滋養乾燥脫皮雙唇。</p>
+                        <h3 class="product-title">純淨蜂蜜護唇膏</h3>
+                        <p class="product-description">來自芬蘭森林的野花蜂蜜，天然修護力，搭配椰子油，深層滋養修復唇紋。</p>
                         <div class="product-footer">
-                            <div class="price">NT$ 320</div>
-                            <button class="buy-button" onclick="alert('感謝您的青睞，請透過聯絡方式洽詢訂購詳情')">加入購物</button>
+                            <div class="price">NT$ 290</div>
+                            <button class="buy-button" onclick="alert('感謝您的青睞，請透過聯絡方式洽詢訂購')">Add Cart</button>
                         </div>
                     </div>
                 </div>
@@ -551,30 +588,62 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">品牌理念</h2>
-                <p class="section-subtitle">OUR PHILOSOPHY</p>
+                <div class="section-tag">Our Story</div>
+                <h2 class="section-title">關於 HYGGE</h2>
             </div>
             
             <div class="about-content">
-                <p class="about-text">森林工坊源自對自然與手作的熱愛，我們相信每一件作品都應該擁有獨特的靈魂。從選材到完成，每個環節都堅持手工製作，讓木材的紋理與香氣在指尖流轉，將時間的溫度刻印在作品之中。</p>
-                <p class="about-text">我們的護唇膏系列同樣遵循天然原則，拒絕化學添加，只用最純粹的植物精華呵護您的雙唇。在這個快速的時代，我們選擇慢下來，用心感受每一個細節。</p>
+                <p class="about-text">HYGGE 源自丹麥語，意指「舒適愜意的時光」。我們相信簡單即是美，每件作品都以永續材料手工製作，保留木材最真實的觸感與溫度。</p>
+                <p class="about-text">從家具到護唇膏，我們堅持北歐設計哲學——功能性、簡約性與永續性。讓每個日常時刻，都能感受到純粹的美好。</p>
             </div>
 
             <div class="features">
                 <div class="feature">
-                    <div class="feature-icon">✦</div>
-                    <h3 class="feature-title">職人精神</h3>
-                    <p class="feature-text">每件作品皆由經驗豐富的工藝師傅親手製作，傳承傳統技法的同時融入當代設計美學</p>
+                    <div class="feature-icon">🌲</div>
+                    <h3 class="feature-title">永續材料</h3>
+                    <p class="feature-text">使用 FSC 認證木材與有機植物原料，實踐對環境的承諾</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">❋</div>
-                    <h3 class="feature-title">天然永續</h3>
-                    <p class="feature-text">堅持使用永續林場木材與有機認證原料，為環境盡一份心力，實踐負責任的生產</p>
+                    <div class="feature-icon">✋</div>
+                    <h3 class="feature-title">手工製作</h3>
+                    <p class="feature-text">每件作品由職人手工完成，保證品質與獨特性</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">✤</div>
-                    <h3 class="feature-title">客製服務</h3>
-                    <p class="feature-text">提供專屬訂製服務，從尺寸、木種到細節處理，打造專屬於您的獨一無二作品</p>
+                    <div class="feature-icon">♡</div>
+                    <h3 class="feature-title">簡約設計</h3>
+                    <p class="feature-text">承襲北歐美學，去除多餘裝飾，呈現材料本質之美</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Our Values</div>
+                <h2 class="section-title">品牌核心價值</h2>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-number">01</div>
+                    <div class="value-title">Less is More</div>
+                    <p class="value-text">少即是多，追求簡約而不簡單的設計理念</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-number">02</div>
+                    <div class="value-title">Natural</div>
+                    <p class="value-text">天然純粹，讓材料本身說話</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-number">03</div>
+                    <div class="value-title">Timeless</div>
+                    <p class="value-text">經典永恆，超越流行的設計</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-number">04</div>
+                    <div class="value-title">Sustainable</div>
+                    <p class="value-text">永續環保，對地球負責</p>
                 </div>
             </div>
         </div>
@@ -583,15 +652,15 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
+                <div class="section-tag">Get in Touch</div>
                 <h2 class="section-title">聯絡我們</h2>
-                <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">GET IN TOUCH</p>
             </div>
             
             <div class="contact-grid">
                 <div class="contact-item">
                     <div class="contact-icon">✉</div>
                     <div class="contact-label">Email</div>
-                    <div class="contact-info">hello@forestatelier.com</div>
+                    <div class="contact-info">hello@hygge-studio.com</div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">☎</div>
@@ -599,16 +668,16 @@
                     <div class="contact-info">02-2345-6789</div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">⌘</div>
+                    <div class="contact-icon">⌖</div>
                     <div class="contact-label">Studio</div>
-                    <div class="contact-info">台北市大安區工藝街 88 號</div>
+                    <div class="contact-info">台北市中山區北歐街 100 號</div>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2024 FOREST ATELIER 森林工坊. ALL RIGHTS RESERVED.</p>
+        <p>© 2024 HYGGE Studio. Designed with simplicity and care.</p>
     </footer>
 </body>
 </html>
